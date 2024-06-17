@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeSimpleSteps = () => {
     return (
-        <div>HomeSimpleSteps</div>
+        <div id='simple-steps'>HomeSimpleSteps</div>
     )
 }
 
