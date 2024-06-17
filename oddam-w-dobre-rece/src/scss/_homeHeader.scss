@@ -1,5 +1,6 @@
 @import 'utility/functions';
 @import 'settings/colors';
+@import 'settings/fonts';
 
 .header {
   display: flex;
@@ -25,6 +26,7 @@
     font-size: rem(38);
     text-align: center;
     line-height: rem(55);
+    color: $text-color;
   }
   img {
     margin-top: rem(25);
@@ -46,6 +48,7 @@
       color: $text-color;
       border: 0.75px solid $text-color;
       font-size: rem(36);
+      font-weight: lighter;
     }
   }
 }
