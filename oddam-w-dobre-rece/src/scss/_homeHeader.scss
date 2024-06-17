@@ -1,4 +1,5 @@
 @import 'utility/functions';
+@import 'utility/mixins';
 @import 'settings/colors';
 @import 'settings/fonts';
 
@@ -38,17 +39,7 @@
     column-gap: rem(44);
 
     a {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: rem(310);
-      height: rem(120);
-      text-decoration: none;
-      color: $text-color;
-      border: 0.75px solid $text-color;
-      font-size: rem(36);
-      font-weight: lighter;
+      @include oddaj-rzeczy-border;
     }
   }
 }

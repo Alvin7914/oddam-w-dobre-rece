@@ -1,3 +1,61 @@
-#simple-steps {
-  margin-top: 500px;
+@import 'settings/colors';
+@import 'utility/functions';
+@import 'utility/mixins';
+
+.simple-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: rem(38);
+    margin-top: rem(55);
+  }
+
+  &>img {
+    margin-top: rem(30);
+  }
+
+  .four-columns {
+    background-color: $primary-color;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: rem(200);
+    padding-top: rem(73);
+    padding-bottom: rem(70);
+    margin-top: rem(40);
+
+    &>div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      p:nth-of-type(1) {
+        text-align: center;
+        margin-top: rem(9);
+        &::after {
+          content: '';
+          display: block;
+          width: 70px;
+          height: 2px;
+          background-color: #707070;
+          position: absolute;
+          top: 120px;
+          right: 31px;
+        }
+      }
+
+      p:nth-of-type(2) {
+        text-align: center;
+        margin-top: rem(21);
+      }
+    }
+  }
+
+  a {
+    @include oddaj-rzeczy-border;
+    margin-top: rem(35);
+  }
 }
