@@ -1,0 +1,39 @@
+@import 'settings/fonts';
+@import 'settings/colors';
+@import 'utility/functions';
+
+.three-columns {
+  background-image: url("../assets/3ColumnsBackground.png");
+  width: rem(1900);
+  height: rem(384);
+  display: flex;
+  justify-content: space-around;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $text-color;
+    width: rem(334);
+
+    p:nth-child(1) {
+      font-size: rem(90);
+      font-weight: lighter;
+      line-height: rem(122);
+      margin-top: rem(46);
+      color: $secondary-color;
+    }
+
+    p:nth-child(2) {
+      font-size: rem(18);
+      margin-top: rem(10);
+    }
+
+    p:nth-child(3) {
+      font-size: rem(16);
+      line-height: 1.5;
+      margin-top: rem(28);
+      text-align: center;
+    }
+  }
+}
