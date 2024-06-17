@@ -2,3 +2,15 @@
 @import '../settings/colors';
 @import '../settings/fonts';
 @import '../settings/variables';
+
+@mixin link-border {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  border: 0.75px solid $border-color;
+  opacity: 0;
+  transition: opacity 0.3s;
+}

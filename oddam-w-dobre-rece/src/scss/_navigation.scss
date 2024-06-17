@@ -1,0 +1,56 @@
+@import 'settings/_colors.scss';
+@import 'utility/mixins';
+@import 'utility/functions';
+
+nav {
+  .login-list {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: rem(10);
+    margin-bottom: rem(34);
+    margin-top: rem(46);
+    margin-right: rem(152);
+    font-size: rem(14);
+    li {
+      a {
+        text-decoration: none;
+        color: $secondary-text-color;
+        padding: rem(9) rem(10);
+        position: relative;
+
+        &::before {
+         @include link-border;
+        }
+
+        &:hover::before {
+          opacity: 1;
+        }
+      }
+    }
+
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: rem(15);
+    margin-right: rem(146);
+    a {
+      text-decoration: none;
+      color: $text-color;
+      padding: rem(9) rem(20);
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        @include link-border;
+        border: 0.75px solid $text-color;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
