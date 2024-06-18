@@ -31,25 +31,37 @@
       flex-direction: column;
       align-items: center;
       position: relative;
+      color: $text-color;
 
       p:nth-of-type(1) {
         text-align: center;
         margin-top: rem(9);
-        &::after {
-          content: '';
-          display: block;
-          width: 70px;
-          height: 2px;
-          background-color: #707070;
-          position: absolute;
-          top: 120px;
-          right: 31px;
-        }
       }
 
       p:nth-of-type(2) {
         text-align: center;
         margin-top: rem(21);
+      }
+
+      .after-line1 {
+        &::after {
+          @include after-line;
+        }
+      }
+
+      .after-line2 {
+        &::after {
+          @include after-line;
+          top: 134px;
+          right: 24px;
+        }
+      }
+      .after-line3 {
+        &::after {
+          @include after-line;
+          top: 119px;
+          right: 46px;
+        }
       }
     }
   }

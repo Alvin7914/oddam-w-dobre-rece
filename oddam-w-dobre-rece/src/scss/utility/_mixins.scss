@@ -28,3 +28,14 @@
   font-size: rem(36);
   font-weight: lighter;
 }
+
+@mixin after-line {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 2px;
+  background-color: #707070;
+  position: absolute;
+  top: 120px;
+  right: 31px;
+}
