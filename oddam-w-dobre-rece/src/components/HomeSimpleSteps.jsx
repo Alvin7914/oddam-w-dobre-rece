@@ -14,22 +14,22 @@ const HomeSimpleSteps = () => {
             <div className='four-columns'>
                 <div>
                     <img src={shirtSvg} alt="shirt"/>
-                    <p>Wybierz rzeczy</p>
+                    <p className='after-line1'>Wybierz rzeczy</p>
                     <p>ubrania, zabawki,<br/>sprzęt i inne</p>
                 </div>
                 <div>
                     <img src={bagSvg} alt="bag"/>
-                    <p>Spakuj je</p>
+                    <p className='after-line1'>Spakuj je</p>
                     <p>skorzystaj z<br/>worków na śmieci</p>
                 </div>
                 <div>
                     <img src={searchSvg} alt="magnifying-glass"/>
-                    <p>Zdecyduj komu<br />chcesz pomóc</p>
+                    <p className='after-line2'>Zdecyduj komu<br />chcesz pomóc</p>
                     <p>wybierz zaufane<br/>miejsce</p>
                 </div>
                 <div>
                     <img src={arrowsSvg} alt="arrows-in-circle"/>
-                    <p>Zamów kuriera</p>
+                    <p className='after-line3'>Zamów kuriera</p>
                     <p>kurier przyjedzie<br/>w dogodnym terminie</p>
                 </div>
             </div>
