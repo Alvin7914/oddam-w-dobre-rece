@@ -1,3 +1,50 @@
-#about-us {
-  margin-top: 500px;
+@import 'utility/functions';
+@import 'utility/mixins';
+@import 'settings/colors';
+@import 'settings/fonts';
+
+.about-us {
+  display: flex;
+  justify-content: space-between;
+  margin-top: rem(80);
+
+  .about-us__left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $text-color;
+    margin-left: rem(150);
+
+    h2 {
+      font-size: rem(38);
+      margin-top: rem(186);
+      letter-spacing: -0.76px;
+    }
+
+    p {
+      width: rem(657);
+      padding-inline: rem(20);
+      font-size: rem(30);
+      text-align: center;
+      letter-spacing: -0.6px;
+      margin-top: rem(65);
+      line-height: rem(54);
+    }
+    img:nth-of-type(1) {
+      margin-top: rem(32);
+    }
+
+    img:nth-of-type(2) {
+      margin-top: rem(40);
+      margin-left: rem(450);
+    }
+  }
+
+  .about-us__right-img {
+    background-image: url("../assets/People.jpg");
+    background-size: cover;
+    background-position: left;
+    width: rem(942);
+    height: rem(935);
+  }
 }
