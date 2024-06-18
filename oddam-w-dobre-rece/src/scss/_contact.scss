@@ -1,3 +1,102 @@
-#contact {
-  margin-top: 500px;
+@import 'utility/functions';
+@import 'utility/mixins';
+@import 'settings/colors';
+@import 'settings/fonts';
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: rem(1026);
+  position: relative;
+  color: $text-color;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../assets/Background-Contact-Form.jpg");
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+  h2 {
+    margin-top: rem(200);
+    margin-right: rem(236);
+    font-size: rem(38);
+  }
+
+  >img {
+   margin-top: rem(25);
+    margin-right: rem(288);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: rem(73);
+    margin-right: rem(142);
+
+    label {
+      font-size: rem(16);
+      font-weight: 600;
+      margin-bottom: rem(12);
+      width: rem(256);
+    }
+
+    input, textarea {
+      font-size: rem(18);
+      border: none;
+      border-bottom: 1px solid $secondary-text-color;
+      padding-bottom: rem(4);
+      background-color: transparent;
+    }
+
+    input {
+      &::placeholder {
+        font-family: $font-base;
+        font-size: rem(18);
+        opacity: 0.26;
+        letter-spacing: 0;
+      }
+    }
+
+    textarea {
+      width: rem(528);
+      height: rem(103);
+      &::placeholder {
+        font-family: $font-base;
+        font-size: rem(18);
+        opacity: 0.26;
+        letter-spacing: 0;
+        line-height: rem(24);
+      }
+    }
+
+    .input-name-div {
+      margin-right: rem(10);
+    }
+
+    >div {
+      display: flex;
+      margin-bottom: rem(40);
+    }
+
+    button {
+      align-self: flex-end;
+      padding: rem(13) rem(52);
+      border-radius: 0;
+      border: 0.75px solid $secondary-text-color;
+      background-color: transparent;
+      font-size: rem(18);
+      margin-top: rem(44);
+      color: black;
+      font-weight: 300;
+    }
+  }
 }

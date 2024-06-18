@@ -1,0 +1,26 @@
+@import 'utility/functions';
+@import 'utility/mixins';
+@import 'settings/colors';
+@import 'settings/fonts';
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  margin-right: rem(142);
+  margin-bottom: rem(20);
+  bottom: 0;
+  color: $text-color;
+  font-size: rem(18);
+
+  >div img:first-of-type {
+    margin-right: rem(20);
+    margin-left: rem(587);
+  }
+
+  img {
+    width: rem(30);
+    height: rem(30);
+  }
+}
