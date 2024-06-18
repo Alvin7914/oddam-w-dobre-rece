@@ -3,3 +3,8 @@
 body {
   font-family: $font-base;
 }
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
