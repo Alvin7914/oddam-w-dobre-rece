@@ -84,7 +84,7 @@ const LogIn = () => {
                     </div>
                     <div>
                         <Link to='/rejestracja' className='register-btn'>Załóż konto</Link>
-                        <button type='submit' className='login-btn' onClick={handleSubmit}>Zaloguj się</button>
+                        <button type='submit' className='login-btn'>Zaloguj się</button>
                     </div>
                 </form>
 
