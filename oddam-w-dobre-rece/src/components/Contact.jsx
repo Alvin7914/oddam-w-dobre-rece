@@ -1,18 +1,10 @@
 import React from "react";
 import lineSvg from "../assets/Decoration.svg";
 import Footer from "./Footer.jsx";
+import validateEmail from '../js/utils.jsx';
 
 
 const Contact = () => {
-
-    const validateEmail = (email) => {
-        return String(email)
-            .toLowerCase()
-            .match(
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            );
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
