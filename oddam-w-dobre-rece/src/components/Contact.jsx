@@ -4,7 +4,6 @@ import Footer from "./Footer.jsx";
 
 
 const Contact = () => {
-    const [errorsArray, setErrorsArray] = useState([]);
 
     const validateEmail = (email) => {
         return String(email)
@@ -30,7 +29,6 @@ const Contact = () => {
         const errorMessage = document.querySelector('.error-message');
         const successfulValidation = document.querySelector('.successful-validation');
 
-        setErrorsArray([]);
         let errors = [];
 
         //schowanie powiadomień po poprzedniej próbie przesłania formularza
@@ -40,25 +38,44 @@ const Contact = () => {
         // walidacja
         if (!inputNameV || inputNameV.includes(' ')) {
             const error1 = 1;
-            setErrorsArray(state => [...state, error1]);
             errors.push(error1);
         }
 
         if (!inputEmailV || validateEmail(inputEmailV) === null) {
             const error2 = 2;
-            setErrorsArray(state => [...state, error2]);
             errors.push(error2);
         }
 
         if (!inputMessageV || inputMessageV.length < 120) {
             const error3 = 3;
-            setErrorsArray(state => [...state, error3]);
             errors.push(error3);
         }
 
+        //poprawna i niepoprawna walidacja
         if (errors.length === 0) {
+            const formData = {
+                name: inputNameV,
+                email: inputEmailV,
+                message: inputMessageV
+            }
+
+            fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
+                method: "POST",
+                body: JSON.stringify(formData),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Server response:',data)
+                })
+                .catch(error => {
+                    console.log("Error:", error)
+                })
+
             successfulValidation.classList.remove('hidden');
-            [inputName, inputEmail, inputMessage].forEach(item => item.value = '')
+            [inputName, inputEmail, inputMessage].forEach(item => item.value = '');
         } else {
             if (errors.includes(1)) {
                 errorName.classList.remove('d-none');
@@ -76,6 +93,7 @@ const Contact = () => {
 
     return (
         <section className='contact' id='contact'>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequatur dolore doloribus, labore laudantium quaerat ut! Atque, eius laborum!</p>
             <h2>Skontaktuj się z nami</h2>
             <img src={lineSvg} alt="decorative-line"/>
             <p className='successful-validation hidden'>Wiadomość została wysłana! <br />&nbsp;Wkrótce się skontaktujemy.</p>
