@@ -98,7 +98,6 @@ const Contact = () => {
 
     return (
         <section className='contact' id='contact'>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequatur dolore doloribus, labore laudantium quaerat ut! Atque, eius laborum!</p>
             <h2>Skontaktuj się z nami</h2>
             <img src={lineSvg} alt="decorative-line"/>
             <p className='successful-validation hidden'>Wiadomość została wysłana! <br />&nbsp;Wkrótce się skontaktujemy.</p>
