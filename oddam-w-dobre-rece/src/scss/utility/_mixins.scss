@@ -39,3 +39,18 @@
   top: 120px;
   right: 31px;
 }
+
+@mixin form-input {
+  font-size: rem(18);
+  border: none;
+  border-bottom: 1px solid $secondary-text-color;
+  padding-bottom: rem(4);
+  background-color: transparent;
+}
+
+@mixin form-input-placeholder {
+  font-family: $font-base;
+  font-size: rem(18);
+  opacity: 0.26;
+  letter-spacing: 0;
+}

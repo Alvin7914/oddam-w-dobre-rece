@@ -1,0 +1,71 @@
+@import 'utility/functions';
+@import 'utility/mixins';
+@import 'settings/colors';
+@import 'settings/fonts';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: rem(40);
+    color: $text-color;
+    letter-spacing: -0.8px;
+    margin-top: rem(123);
+  }
+  img {
+    margin-top: rem(32);
+  }
+  
+  &-form {
+    background-color: $primary-color;
+    padding: rem(40) rem(67);
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(60);
+
+    label {
+      font-size: rem(16);
+      font-weight: 600;
+      margin-bottom: rem(15);
+
+      &:nth-of-type(2) {
+        margin-top: rem(15);
+      }
+    }
+
+    input {
+      width: rem(240);
+      @include form-input;
+      &::placeholder {
+        @include form-input-placeholder;
+      }
+    }
+
+  }
+
+  >div {
+    margin-top: rem(30);
+    width: rem(510);
+    display: flex;
+    justify-content: space-between;
+
+    .register-btn, .login-btn {
+      text-decoration: none;
+      font-size: rem(18);
+      font-weight: 300;
+      color: black;
+      padding: rem(13) rem(15);
+      position: relative;
+
+      &::before {
+        @include link-border;
+        border: 0.75px solid $text-color;
+      }
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
+}

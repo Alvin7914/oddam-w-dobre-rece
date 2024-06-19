@@ -1,4 +1,5 @@
 @import 'settings/_fonts.scss';
+@import 'utility/_functions.scss';
 
 body {
   font-family: $font-base;
@@ -15,4 +16,20 @@ body {
 
 .d-none {
   display: none !important;
+}
+
+.disabled-link {
+  pointer-events: none;
+  color: grey !important;
+}
+
+.error-msg {
+  font-size: rem(12);
+  font-weight: 700;
+  color: red;
+  margin-top: rem(10);
+}
+
+.error-border {
+  border-bottom: 1px solid red !important;
 }
