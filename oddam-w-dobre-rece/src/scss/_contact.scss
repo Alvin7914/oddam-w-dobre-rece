@@ -51,17 +51,6 @@
     margin-top: rem(30);
     margin-right: rem(142);
 
-    .error-msg {
-      font-size: rem(12);
-      font-weight: 700;
-      color: red;
-      margin-top: rem(10);
-    }
-
-    .error-border {
-      border-bottom: 1px solid red !important;
-    }
-
     label {
       font-size: rem(16);
       font-weight: 600;
@@ -70,19 +59,12 @@
     }
 
     input, textarea {
-      font-size: rem(18);
-      border: none;
-      border-bottom: 1px solid $secondary-text-color;
-      padding-bottom: rem(4);
-      background-color: transparent;
+     @include form-input;
     }
 
     input {
       &::placeholder {
-        font-family: $font-base;
-        font-size: rem(18);
-        opacity: 0.26;
-        letter-spacing: 0;
+        @include form-input-placeholder;
       }
     }
 
@@ -90,10 +72,7 @@
       width: rem(528);
       height: rem(103);
       &::placeholder {
-        font-family: $font-base;
-        font-size: rem(18);
-        opacity: 0.26;
-        letter-spacing: 0;
+        @include form-input-placeholder;
         line-height: rem(24);
       }
     }

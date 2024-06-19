@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import lineSvg from "../assets/Decoration.svg";
 import Footer from "./Footer.jsx";
 
@@ -34,6 +34,9 @@ const Contact = () => {
         //schowanie powiadomień po poprzedniej próbie przesłania formularza
         [errorName, errorEmail, errorMessage].forEach(item => item.classList.add('d-none'));
         successfulValidation.classList.add('hidden');
+        inputName.classList.remove('error-border');
+        inputEmail.classList.remove('error-border');
+        inputMessage.classList.remove('error-border');
 
         // walidacja
         if (!inputNameV || inputNameV.includes(' ')) {
@@ -84,14 +87,17 @@ const Contact = () => {
         } else {
             if (errors.includes(1)) {
                 errorName.classList.remove('d-none');
+                inputName.classList.add('error-border');
             }
 
             if (errors.includes(2)) {
                 errorEmail.classList.remove('d-none');
+                inputEmail.classList.add('error-border');
             }
 
             if (errors.includes(3)) {
                 errorMessage.classList.remove('d-none');
+                inputMessage.classList.add('error-border');
             }
         }
     }
