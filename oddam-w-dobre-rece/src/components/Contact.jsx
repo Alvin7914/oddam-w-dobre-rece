@@ -59,7 +59,7 @@ const Contact = () => {
                 message: inputMessageV
             }
 
-            fetch('https://fer-api.coderslab.pl/v1/portfolio/contact.', {
+            fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
                 method: "POST",
                 body: JSON.stringify(formData),
                 headers: {
