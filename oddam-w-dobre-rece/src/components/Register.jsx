@@ -20,7 +20,7 @@ const Register = () => {
                         <label htmlFor="input-register-password">Hasło</label>
                         <input id='input-register-password' type="password"/>
                         <p className='error-msg d-none error-password-2'>Podane hasło jest za krótkie!</p>
-                        <label htmlFor="input-register-repeat-password">Hasło</label>
+                        <label htmlFor="input-register-repeat-password">Powtórz hasło</label>
                         <input id='input-register-repeat-password' type="password"/>
                         <p className='error-msg d-none error-repeat-password'>Podane hasło nie jest takie samo jak wyżej!</p>
                     </div>
