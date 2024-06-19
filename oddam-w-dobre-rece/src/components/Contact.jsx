@@ -59,23 +59,28 @@ const Contact = () => {
                 message: inputMessageV
             }
 
-            fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
+            fetch('https://fer-api.coderslab.pl/v1/portfolio/contact.', {
                 method: "POST",
                 body: JSON.stringify(formData),
                 headers: {
                     "Content-Type": "application/json"
                 }
             })
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Błąd serwera'); // Rzuć wyjątek w przypadku błędu
+                    }
+                    return response.json();
+                })
                 .then(data => {
-                    console.log('Server response:',data)
+                    console.log('Server response:', data);
+                    successfulValidation.classList.remove('hidden');
+                    [inputName, inputEmail, inputMessage].forEach(item => item.value = '');
                 })
                 .catch(error => {
-                    console.log("Error:", error)
-                })
-
-            successfulValidation.classList.remove('hidden');
-            [inputName, inputEmail, inputMessage].forEach(item => item.value = '');
+                    console.log("Error:", error); // Obsłuż błąd tutaj
+                    alert('Błąd serwera, spróbuj ponownie');
+                });
         } else {
             if (errors.includes(1)) {
                 errorName.classList.remove('d-none');
