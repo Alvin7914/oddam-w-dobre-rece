@@ -1,3 +1,64 @@
-#who-we-help {
-  margin-top: 500px;
+@import 'utility/functions';
+@import 'utility/mixins';
+@import 'settings/colors';
+@import 'settings/fonts';
+
+.who-we-help {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    margin-top: rem(70);
+    font-size: rem(38);
+    letter-spacing: -0.76px;
+    line-height: 1.3;
+    color: $text-color;
+  }
+
+  img {
+    margin-top: rem(27);
+  }
+
+  &__btns-box {
+    display: flex;
+    justify-content: center;
+    width: rem(750);
+    margin-top: rem(48);
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: rem(750);
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        width: rem(208);
+        height: rem(79);
+        text-align: center;
+        border: none;
+        color: $text-color;
+        font-size: rem(24);
+        cursor: pointer;
+        position: relative;
+
+        &.who-we-help__active {
+          border: 0.75px solid $text-color;
+        }
+
+        &::before {
+          @include link-border;
+          border: 0.75px solid $text-color;
+        }
+
+        &:hover::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
