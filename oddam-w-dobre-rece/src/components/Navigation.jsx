@@ -1,9 +1,16 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {Link as ScrollLink} from "react-scroll";
 
 
 const Navigation = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        if (localStorage.getItem('email') !== null) {
+            setIsLoggedIn(true)
+        }
+    }, []);
 
     return (
         <nav>
