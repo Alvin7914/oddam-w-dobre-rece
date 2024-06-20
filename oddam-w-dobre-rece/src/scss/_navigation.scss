@@ -11,6 +11,11 @@ nav {
     margin-top: rem(46);
     margin-right: rem(152);
     font-size: rem(14);
+
+    .nav-greeting {
+      font-size: rem(14);
+      margin-right: rem(10);
+    }
     li {
       a {
         text-decoration: none;

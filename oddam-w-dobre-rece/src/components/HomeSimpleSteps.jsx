@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import lineSvg from "../assets/Decoration.svg";
 import shirtSvg from "../assets/Icon-1.svg";
 import bagSvg from "../assets/Icon-2.svg";
@@ -7,6 +7,14 @@ import arrowsSvg from "../assets/Icon-4.svg";
 import {Link} from "react-router-dom";
 
 const HomeSimpleSteps = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        if (localStorage.getItem('email') !== null) {
+            setIsLoggedIn(true)
+        }
+    }, []);
+
     return (
         <section className='simple-steps' id='simple-steps'>
             <h2>Wystarczą 4 proste kroki</h2>
@@ -33,7 +41,7 @@ const HomeSimpleSteps = () => {
                     <p>kurier przyjedzie<br/>w dogodnym terminie</p>
                 </div>
             </div>
-            <Link className='header-btn1' to='/logowanie'>ODDAJ<br/>RZECZY</Link>
+            <Link className='header-btn1' to={isLoggedIn ? '/oddaj-rzeczy' : '/logowanie'}>ODDAJ<br/>RZECZY</Link>
         </section>
     )
 }

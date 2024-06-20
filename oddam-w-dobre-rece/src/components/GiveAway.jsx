@@ -11,7 +11,6 @@ const GiveAway = () => {
             <GiveAwayHeader />
             <Form />
             <Contact />
-            <Footer />
         </>
     )
 }

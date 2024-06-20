@@ -12,11 +12,26 @@ const Navigation = () => {
         }
     }, []);
 
+    const logOut = () => {
+        localStorage.removeItem('email');
+        localStorage.removeItem('password');
+    }
+
     return (
         <nav>
             <ul className='login-list'>
-                <li className="login-item"><Link to='/logowanie' className='nav-login-btn'>Zaloguj</Link></li>
-                <li className="login-item"><Link to='/rejestracja' className='nav-register-btn'>Załóż konto</Link></li>
+                {
+                    isLoggedIn
+                        ? <>
+                            <p className='nav-greeting'>Cześć {JSON.parse(localStorage.getItem('email'))}!</p>
+                            <li className="login-item"><Link to='/oddaj-rzeczy'>Oddaj rzeczy</Link></li>
+                            <li className="login-item"><Link to='/wylogowano' onClick={logOut}>Wyloguj</Link></li>
+                            </>
+                        : <>
+                            <li className="login-item"><Link to='/logowanie' className='nav-login-btn'>Zaloguj</Link></li>
+                            <li className="login-item"><Link to='/rejestracja' className='nav-register-btn'>Załóż konto</Link></li>
+                        </>
+                }
             </ul>
             <ul className="nav-list">
                 <li className="nav-item"><Link to='/'>Start</Link></li>
